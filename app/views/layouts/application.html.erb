@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Otomo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <script src="https://kit.fontawesome.com/d4cd2a33d0.js" crossorigin="anonymous"></script>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Mochiy Pop One', sans-serif;
+        }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <p><%= link_to '', hello_index_path, class: "fa-solid fa-house"%></p>
+      <div class="header-list">
+        <ul>
+          <% if user_signed_in? %>
+          <li><%= link_to "投稿一覧", tweets_path %></li>
+          <li><%= link_to "新規投稿",new_tweet_path %></li>
+          <li><%= link_to "マイページ",user_path(current_user.id) %></li>
+          <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'button-link' %></li>
+          <% else %>
+          <li><%= link_to "ログイン", tweets_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </header>
+    <main>
+    <div class="toumei">
+      <%= yield %>
+    </div>
+    </main>
+  </body>
+</html>

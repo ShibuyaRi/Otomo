@@ -1,0 +1,207 @@
+// Place all the styles related to the tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+
+.blank1{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.blank2{
+    text-align: center;
+    width: 50%;
+    text-align: center;
+    color: white;
+    background: #575b46;
+    border-radius: 9px;
+    margin: 20px 5px;
+    padding: 20px 40px;
+    
+    
+    }
+
+//.field {
+//    padding: 1rem 2rem;
+//    border: 1px solid #000;
+//    margin: 10px;
+//    }
+
+.field {
+    padding: 1em 2em;
+    margin: 2em 0;
+    color: #000000;
+    background: #ffffff;/*背景色*/
+    border-top: solid 4px #87ffab;
+    border-right: solid 4px #87ffab; /* 右側のボーダー色 */
+    border-bottom: solid 4px #87ffab; /* 下部のボーダー色 */
+    border-left: solid 4px #87ffab; /* 左側のボーダー色 */
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+    border-radius: 30px;
+}
+
+    .post-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        padding: 0px 43px;
+      }
+
+      .post {
+        width: 330px;
+        margin: 10px;
+        padding: 20px;
+        border: 1px solid #000000;
+        border-radius: 30px;
+        background: #feffeb;
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+      }
+
+      .like-button {
+        background-color: #feffeb; /* ボタンの背景色を青色に設定 */
+        color: #ff0000; /* 文字色を白に設定 */
+        border: none; /* ボーダーをなしにする */
+        padding: 5px 5px; /* パディングを設定 */
+        cursor: pointer; /* カーソルをポインターにする */
+        text-decoration: none;
+      }
+
+
+      .center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px; /* 上部に30pxの余白を追加 */
+      }
+
+      .center2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 30px;
+      }
+
+      .centerdetail{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .tag-search {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* 高さを揃えるために中央揃え */
+        gap: 10px; /* タグと検索ボタンの間にスペースを追加 */
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+
+      .tags {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    /* タグアイテム */
+    .tag-item {
+        display: flex;
+        align-items: center;
+    }
+    
+    /* チェックボックス非表示 */
+    .tag-checkbox {
+        display: none;
+    }
+    
+    /* チェックボックスに対応するラベル */
+    .tag-label {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #000000;
+        background-color: #ffffff;
+        border: 2px solid #777777;
+        border-radius: 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    
+    /* チェックボックスがチェックされたとき */
+    .tag-checkbox:checked + .tag-label {
+        background-color: #ffffff;
+        border: 2px solid #ff0000;
+    }
+    
+    /* ホバー時 */
+    .tag-label:hover {
+        background-color: #ffffff;
+    }
+    
+
+
+
+    .search-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #ffffff;
+        background-color: #000000;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        font-family: "Mochiy Pop One", sans-serif;
+    }
+    
+    .search-button:hover {
+        background-color: #000000;
+        transform: scale(1.05);
+    }
+    
+    .search-button:active {
+        background-color: #000000;
+        transform: scale(1);
+    }
+
+    .post-tag{
+        color:#009416
+    }
+
+
+    .detail-box {
+        position: relative;
+        margin: 2em 0;
+        padding: 25px 10px 7px;
+        background-color: #feffeb;
+        border: solid 2px #FFC107;
+        justify-content: center;
+        height: auto;
+        width: 90%;
+    }
+    .detail-box .box-title {
+        position: absolute;
+        display: inline-block;
+        top: -2px;
+        left: -2px;
+        padding: 0 9px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 17px;
+        background: #FFC107;
+        color: #ffffff;
+        font-weight: 100px;
+    }
+    .detail-box p {
+        margin: 0; 
+        padding: 0;
+    }
+
+    .detail-image{
+        border-radius: 10px;
+        margin: 50px;
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+    }

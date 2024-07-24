@@ -1,0 +1,54 @@
+// Place all the styles related to the hello controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.otomo{        
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 40px;
+    padding-top: 150px;
+}
+
+.center3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    padding-top: 30px;
+    padding-bottom: 200px; /* 上部に30pxの余白を追加 */
+}
+
+
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 50px;
+}
+
+.image-container img {
+    max-width: 100%; /* 画像がコンテナからはみ出さないようにする */
+     /* 高さを自動で調整 */
+    width: auto; 
+    height: 270px;
+    justify-content: center;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-bottom: 90px;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.32);
+
+}
+
+.background-container  {
+    background-image: url('/assets/background.jpg');
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center center;
+  }
+  .toumei{
+    background-color: rgba(255, 255, 255, 0.621);
+  }

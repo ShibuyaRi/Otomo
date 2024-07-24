@@ -1,0 +1,56 @@
+
+<div class="center">
+
+<div class="detail">
+<h1>Details</h1>
+</div>
+
+
+
+  <div class="detail-image">
+  <% if @tweet.image.attached? %>
+    <%= image_tag @tweet.image, style: 'width: auto; height: 500px;'%>
+  <% end %>
+  </div>
+
+  <div class="detail-box">
+      <span class="box-title">基本情報</span>
+      <p>投稿者名：<%= @tweet.user.name %></p>
+      <p>商品名：<%= @tweet.name %></p>
+      <p>値段：<%= @tweet.price %>円</p>
+      <p>購入サイト：<a href="<%= @tweet.link %>"><%= @tweet.link %></a></p>
+      <p>いいねしたユーザー：<% @tweet.liked_users.each do |user| %>
+                              <%= user.name %>
+                            <% end %></p>
+  </div>
+
+  <div class="detail-box">
+      <span class="box-title">詳細</span>
+      <p><%= @tweet.detail %></p>
+      <div class="post-tag">
+        <p><% @tweet.tags.each do |tag| %>
+            #<%= tag.name %>
+           <% end %></p>
+        <p><% if user_signed_in? %>
+            <% if current_user.already_liked?(@tweet) %>
+              <%= button_to tweet_like_path(@tweet), method: :delete, class: "like-button" do %>
+                <i class="fa-solid fa-heart fa-1x"></i><%= @tweet.likes.count %>
+              <% end %>
+            <% else %>
+              <%= button_to tweet_likes_path(@tweet), method: :post, class: "like-button" do %>
+                <i class="fa-regular fa-heart fa-1x"></i><%= @tweet.likes.count %>
+              <% end %>
+            <% end %>
+          <% else %>
+            <i class="fa-solid fa-star"></i><%= @tweet.likes.count %>
+          <% end %></p>
+      </div>
+  </div>
+
+
+</div>
+<%= link_to "投稿一覧に戻る", tweets_path %>
+<% if user_signed_in? && current_user.id == @tweet.user_id %>
+  <%= link_to "編集", edit_tweet_path(@tweet.id) %>
+  <%= button_to "削除", tweet_path(@tweet.id), method: :delete %>
+<% end %>

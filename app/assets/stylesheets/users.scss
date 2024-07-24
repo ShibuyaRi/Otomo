@@ -1,0 +1,60 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+//  .top:first-letter {
+//    font-size: 1.7em;
+//    color: rgb(255, 0, 0);
+//  }
+//  span.page {
+//    font-size: 1.7em;
+//    color: rgb(255, 0, 0);
+//  }
+
+  .posts:first-letter {
+    font-size: 2em;
+    color: #ff0000;  
+  }
+
+  .detail:first-letter {
+    font-size: 2em;
+    color: #03bc00;
+  }
+
+  .new:first-letter {
+    font-size: 2em;
+    color: #ff7300;
+  }
+
+  .mypage:first-letter {
+    font-size: 2em;
+    color: rgb(0, 213, 255);
+  }
+
+  .login:first-letter {
+    font-size: 2em;
+    color: #00aeff;
+  }
+
+  .signup:first-letter {
+    font-size: 2em;
+    color: rgb(0, 128, 9);
+  }
+
+  .edit:first-letter {
+    font-size: 2em;
+    color: #FF1493;
+  }
+
+  .edituser:first-letter {
+    font-size: 2em;
+    color: #ffd500;
+  }
+
+  .user-post{        
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    padding-top: 30px;
+}

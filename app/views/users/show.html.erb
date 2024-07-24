@@ -1,0 +1,51 @@
+
+<div class="center">
+<div class="mypage">
+<h1>My Page</h1>
+</div>
+
+<div class="field">
+<p>名前 : <%= @user.name %></p>
+<p>メールアドレス : <%= @user.email %></p>
+<p>ひとこと : <%= @user.profile %></p>
+<% if current_user.id == @user.id %>
+  <%= link_to "編集する", edit_user_registration_path %>
+<% end %>
+</div>
+
+
+<div class="edituser">
+<h1>My Posts</h1>
+</div>
+
+<div class="post-list">
+  <% @user.tweets.each do |t| %>
+  <div class="post">
+    <% if t.image.attached? %>
+      <%= image_tag t.image, style: 'width: auto; height: 250px;'%>
+    <% end %>
+    <p><%= t.name %></P>
+    <%= link_to "詳細", tweet_path(t.id) %>
+  </div>
+  <% end %>
+</div>
+
+
+
+<div class="posts">
+<h1>My Likes</h1>
+</div>
+<div class="post-list">
+  <% @user.liked_tweets.each do |t| %>
+  <div class="post">
+    <% if t.image.attached? %>
+      <%= image_tag t.image, style: 'width: auto; height: 250px;'%>
+    <% end %>
+    <p><%= t.name %></p>
+    <%= link_to "詳細", tweet_path(t.id) %>
+  </div>
+  <% end %>
+</div>
+
+</div>
+<%= link_to "投稿一覧に戻る", tweets_path %>

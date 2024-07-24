@@ -1,0 +1,78 @@
+<%= stylesheet_link_tag 'index', :media => "all" %>
+
+<div class="center">
+<h1 class="posts">Posts</h1>
+
+
+<p><%= link_to '新しい順', tweets_path(latest: "true") %>
+<%= link_to '古い順', tweets_path(old: "true") %>
+<%= link_to 'いいね順', tweets_path(like: "true") %>
+<%= link_to '価格が高い順', tweets_path(high: "true") %>
+<%= link_to '価格が低い順', tweets_path(low: "true") %></p>
+
+<div class="tag-labe">
+<p><%#= form_tag({controller:"tweets",action:"index"}, method: :get) do %></p>
+    <%# Tag.all.each do |t| %>
+        <%#= check_box :tag_ids, t.name %><%#= t.name %>
+    <%# end %>
+    </div>
+    <p><%#= submit_tag '検索', class: 'search-button'%></p>
+<%# end %>
+</div>
+
+<%= form_tag({ controller: "tweets", action: "index" }, method: :get) do %>
+  <div class="tag-search">
+    <div class="tags">
+        <% Tag.all.each do |t| %>
+        <div class="tag-item">
+            <%= check_box_tag 'tag_ids[]', t.id, false, id: "tag_#{t.id}", class: 'tag-checkbox' %>
+            <%= label_tag "tag_#{t.id}", t.name, class: 'tag-label' %>
+        </div>
+        <% end %>
+        <%= submit_tag '検索', class: 'search-button' %>
+    </div>
+  </div>
+<% end %>
+
+
+<div class="post-list">
+    <% @tweets.each do |t| %>
+        <div class="post">
+
+            <% if t.image.attached? %>
+                <%= image_tag t.image, style: 'width: auto; height: 250px;'%>
+            <% end %>
+
+            <p><%= t.name %></p>
+            <p>税込￥<%= t.price %></p>
+
+            <div class="post-tag">
+            <% t.tags.each do |tag| %>
+                #<%= tag.name %>
+            <% end %>
+            </div>
+
+
+            <% if user_signed_in? %>
+                <% if current_user.already_liked?(t) %>
+                    <%= button_to tweet_like_path(id: t.id, tweet_id: t.id), method: :delete, class: "like-button" do %>
+                        <i class="fa-solid fa-heart fa-1x"></i><%= t.likes.count %>
+                    <% end %>
+                <% else %>
+                    <%= button_to tweet_likes_path(id: t.id, tweet_id: t.id), method: :post, class: "like-button" do %>
+                        <i class="fa-regular fa-heart fa-1x"></i><%= t.likes.count %>
+                    <% end %>
+                <% end %>
+            <% else %>
+                <i class="fa-solid fa-star"><%= t.likes.count %>
+            <% end %>
+
+                <%= link_to "詳細", tweet_path(t.id) %>
+            <% if user_signed_in? && current_user.id == t.user_id %>
+                <%= link_to "編集", edit_tweet_path(t.id) %>
+            <% end %>
+        </div>
+    <% end %>
+</div>
+
+

@@ -1,0 +1,102 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ * {
+    padding: 0;
+    margin: 0;
+  }
+/*  body {
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
+      Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+    background-color: rgb(255, 245, 228);
+  }
+*/
+
+body {
+  font-family: "Mochiy Pop One", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  background: repeating-linear-gradient(
+    315deg, /* 45度の角度でストライプ */
+    #ffffff, /* 開始色 */
+    #ffffff 10px, /* 開始色の範囲を10pxに設定 */
+    #efdcb462 10px, /* 次の色が始まる位置 */
+    #efdcb462 20px
+    );
+}
+
+
+
+
+  header {
+    background-color: #000000;
+    height: 80px;
+    font-weight: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header a {
+    color: #ffffff; 
+    text-decoration: none; 
+  }
+  header p {
+    color: #ffffff;
+    margin-left: 50px;
+    font-size: 30px;
+  }
+  .header-list {
+    display: flex;
+    align-items: center;
+  }
+  header ul {
+    display: flex;
+  }
+  header li {
+    list-style: none;
+    margin-right: 60px;
+    font-size: 16px;
+  }
+
+  .button-link {
+    display: inline-block;
+    padding: 0px 0px;
+    background-color: #000000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 100;
+    font-family: "Mochiy Pop One", sans-serif;
+  }
+  
+  .button-link:hover {
+    background-color: #000000;
+  }
+
+/*  body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center center;
+
+  }
+  .toumei{
+    background-color: rgba(255, 255, 255, 0.621);
+  }
